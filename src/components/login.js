@@ -43,7 +43,7 @@ class Login extends React.Component {
                         <WhiteSpace size="xs" />
                         <List>
                             <InputItem value={this.state.uname} onChange={(v) => { this.handlerUser("uname", v) }}>用户名</InputItem>
-                            <InputItem value={this.state.pwd} onChange={(v) => { this.handlerUser("pwd", v) }}>密码</InputItem>
+                            <InputItem type="password" value={this.state.pwd} onChange={(v) => { this.handlerUser("pwd", v) }}>密码</InputItem>
                         </List>
                         <WhiteSpace size="xs" />
                     </WingBlank>

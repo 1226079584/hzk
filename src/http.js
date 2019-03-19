@@ -4,11 +4,12 @@ axios.defaults.baseURL='http://127.0.0.1:8086/'
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    const token = localStorage.getItem('token')
-    // console.log(token)
-    // if(!token) {
-
-    // }
+    
+    // console.log(config)
+    if(config.url !=="login" && config.url !=="homes/swipe") {
+      const AUTH_TOKEN = localStorage.getItem('token')
+      config.headers.common['Authorization'] = AUTH_TOKEN;
+    }
     return config;
   }, function (error) {
     // 对请求错误做些什么
